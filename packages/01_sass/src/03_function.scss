@@ -1,0 +1,11 @@
+@function sum($nums...) {
+  $sum: 0;
+  @each $n in $nums {
+    $sum: $sum + $n;
+  }
+  @return $sum;
+}
+
+.box {
+  width: sum(1,2,3) + px;
+}
