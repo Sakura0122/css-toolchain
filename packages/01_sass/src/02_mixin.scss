@@ -1,0 +1,35 @@
+@mixin background {
+  background-color: #fba;
+}
+
+@mixin border {
+  border: 1px solid #fba;
+}
+
+@mixin compound {
+  @include background;
+  @include border;
+}
+
+p {
+  @include compound;
+}
+
+@mixin bg-color($color:blue,$radius) {
+  background-color: $color;
+  border-radius: $radius;
+}
+
+
+@mixin test {
+  html {
+    @content // 表示占位 和vue插槽类似
+  }
+}
+
+@include test {
+  background-color: #fff;
+  .logo {
+    width: 600px;
+  }
+}
